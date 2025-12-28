@@ -1,5 +1,5 @@
 # Default values for game-2048-chart.
-replicaCount: 1
+replicaCount: 3
 
 image:
   repository: public.ecr.aws/l6m2t8p7/docker-2048
