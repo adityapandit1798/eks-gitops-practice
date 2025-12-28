@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-2048   # <--- Variable 1: The Release Name
+spec:
+  replicas: {{ .Values.replicaCount }}  # <--- Variable 2: Reads from values.yaml
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-2048
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-2048
+    spec:
+      containers:
+        - name: game-2048
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}" # <--- Variable 3
+          ports:
+            - containerPort: 80

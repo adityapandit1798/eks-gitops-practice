@@ -1,0 +1,8 @@
+# Default values for game-2048-chart.
+replicaCount: 1
+
+image:
+  repository: public.ecr.aws/l6m2t8p7/docker-2048
+  tag: latest
+service:
+  type: LoadBalancer
